@@ -19,6 +19,7 @@ public class MetGala {
 
         String userName;
         Scanner scanner = new Scanner(System.in);
+        boolean found = false;
 
         System.out.println("Nome?: ");
         userName = scanner.nextLine();
@@ -26,9 +27,12 @@ public class MetGala {
         for (int i = 0; i < guests.length; i++) {
             if (guests[i].equalsIgnoreCase(userName)) {
                 System.out.println("You can come in");
-                return;
+                found = true;
             }
         }
-        System.out.println("You shall not pass!");
+
+        if (!found) {
+            System.out.println("You shall not pass!");
+        }
     }
 }
